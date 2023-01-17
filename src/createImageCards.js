@@ -5,7 +5,7 @@ export function createImageCard(array) {
         const { webformatURL, largeImageURL, tags, likes, views, comments, downloads } = el;
         return `
             <div class="photo-card">
-                <a href="${largeImageURL}"><img src="${webformatURL}" alt="${tags}" loading="lazy" /></a>
+                <a href="${largeImageURL}" class="card-link"><img src="${webformatURL}" alt="${tags}" loading="lazy" /></a>
                 <div class="info">
                     <p class="info-item"><b>Likes: </b>${likes}</p>
                     <p class="info-item"><b>Views: </b>${views}</p>

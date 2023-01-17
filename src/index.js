@@ -101,10 +101,14 @@ async function onLoadMoreBtnClick(event) {
 
         gallery.refresh();
 
-        if (jsonPixabayApi.page*40 > loadMoreData.totalHits) {
+        // if (jsonPixabayApi.page*40 > loadMoreData.totalHits) {
+        //     loadMoreBtn.classList.add('is-hidden');
+        //     Notify.info("We're sorry, but you've reached the end of search results.");
+        // };
+        if (loadMoreData.hits.length === 0) {
             loadMoreBtn.classList.add('is-hidden');
             Notify.info("We're sorry, but you've reached the end of search results.");
-        };
+        }
         
     }
     catch (error) {

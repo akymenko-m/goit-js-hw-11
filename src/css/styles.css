@@ -41,6 +41,11 @@ input {
     background-size: cover;
 }
 
+.card-link {
+    /* display: block;
+    flex-grow: 1; */
+}
+
 .is-hidden {
     opacity: 0;
 }
