@@ -1,12 +1,13 @@
 body {
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
 }
 
 img {
     display: block;
     width: 100%;
     max-width: 100%;
-    height: auto;
+    height: 180px;
     object-fit: cover;
 }
 
@@ -14,16 +15,32 @@ button {
     width: 100px;
     padding: 5px;
     cursor: pointer;
+    border-radius: 5px;
+    border: solid 2px transparent;
+}
+
+button:hover {
+    border: solid 2px grey;
 }
 
 input {
     min-width: 250px;
     padding: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+input:hover,
+input:focus {
+    border-color: grey;
 }
 
 .search-form {
+    position: sticky;
+    top: 0;
+    z-index: 1;
     background-color: lightblue;
-    padding: 10px;
+    padding: 10px 0;
     display: flex;
     gap: 15px;
     justify-content: center;
@@ -37,17 +54,25 @@ input {
 }
 
 .photo-card {
-    width: calc((100% - 45px) / 4);
+    width: calc((100% - 53px) / 4);
     background-size: cover;
+    border: solid 1px lightgrey;
+    border-radius: 4px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
-.card-link {
-    /* display: block;
-    flex-grow: 1; */
+.photo-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06);
 }
 
 .is-hidden {
     opacity: 0;
+}
+
+.info {
+    padding: 4px;
 }
 
 .info-item {
@@ -58,5 +83,5 @@ input {
 
     display: block;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }

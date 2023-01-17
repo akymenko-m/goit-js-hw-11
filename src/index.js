@@ -109,6 +109,8 @@ async function onLoadMoreBtnClick(event) {
             loadMoreBtn.classList.add('is-hidden');
             Notify.info("We're sorry, but you've reached the end of search results.");
         }
+
+        smoothPageScrolling();
         
     }
     catch (error) {
@@ -135,3 +137,13 @@ async function onLoadMoreBtnClick(event) {
     //     event.target.disabled = false;
     // });
 };
+
+function smoothPageScrolling() {
+    const { height: cardHeight } = document.querySelector(".gallery").firstElementChild.getBoundingClientRect();
+
+    window.scrollBy({
+    top: cardHeight * 2,
+    behavior: "smooth",
+    });
+};
+
